@@ -1,0 +1,42 @@
+.nav {
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+}
+
+.nav__item {
+}
+
+.nav__btn {
+  padding: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 14px;
+  width: 100%;
+
+  color: $color-text-secondary;
+  border-radius: 8px;
+
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $bg-color-accent;
+    color: $bg-color-primary;
+  }
+}
+
+.nav__img {
+  width: 24px;
+  height: 24px;
+}
+
+.nav__icon {
+  margin-left: auto;
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,124 @@
+extends base 
+
+block vars
+	- title = "Dashboard"
+	- customers = [{name: "Jane Cooper", company: "Microsoft", phoneNumber: "(225) 555-0118", email: "jane@microsoft.com", country: "United States", isActive: true}, {name: "Floyd Miles", company: "Yahoo", phoneNumber: "(205) 555-0100", email: "floyd@yahoo.com", country: "Kiribati", isActive: false},	{name: "Ronald Richards", company: "Adobe", phoneNumber: "(302) 555-0107", email: "ronald@adobe.com", country: "Israel", isActive: false}, {name: "Marvin McKinney", company: "Tesla", phoneNumber: "(252) 555-0126", email: "marvin@tesla.com", country: "Iran", isActive: true}, {name: "Jerome Bell", company: "Google", phoneNumber: "(629) 555-0129", email: "jerome@google.com", country: "Réunion", isActive: true},	{name: "Kathryn Murphy", company: "Microsoft", phoneNumber: "(406) 555-0120", email: "kathryn@microsoft.com", country: "Curaçao", isActive: true},	{name: "Jacob Jones", company: "Yahoo", phoneNumber: "(208) 555-0112", email: "jacob@yahoo.com", country: "Brazil", isActive: true}, {name: "Kristin Watson", company: "Facebook", phoneNumber: "(704) 555-0127", email: "kristin@facebook.com", country: "Åland Islands", isActive: false} ]
+	
+
+block content 
+	.wrapper 
+		.sidebar
+			.sidebar__heading.heading
+				svg.heading__img
+					use(href='./images/sprite.svg#icon-setting')
+				h1.heading__text  Dashboard 
+					span.heading__info v.01
+			nav.sidebar__nav.nav
+				ul.nav__list 
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img 
+								use(href='./images/sprite.svg#icon-key-square')
+							p.nav__text Dashboard
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img 
+								use(href='./images/sprite.svg#icon-d-square')
+							p.nav__text Product
+							svg.nav__icon
+								use(href='./images/sprite.svg#icon-chevron-right')
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img  
+								use(href='./images/sprite.svg#icon-user-square')
+							p.nav__text Customers
+							svg.nav__icon 
+								use(href='./images/sprite.svg#icon-chevron-right')
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img  
+								use(href='./images/sprite.svg#icon-wallet-money')
+							p.nav__text Income
+							svg.nav__icon 
+								use(href='./images/sprite.svg#icon-chevron-right')
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img  
+								use(href='./images/sprite.svg#icon-discount-shape')
+							p.nav__text Promote
+							svg.nav__icon 
+								use(href='./images/sprite.svg#icon-chevron-right')
+					li.nav__item 
+						button.nav__btn.button 
+							svg.nav__img  
+								use(href='./images/sprite.svg#icon-message-question')
+							p.nav__text Help
+							svg.nav__icon
+								use(href='./images/sprite.svg#icon-chevron-right')
+			.sidebar__profile.profile 
+				img.profile__img(src="./images/user.png", alt="User avatar")
+				.profile__wrapper 
+					p.profile__name Evano
+					p.profile__job-position Project Manager
+			button.toggle.toggle--close(type="button") 
+				svg.toggle__img
+						use(href='./images/sprite.svg#icon-cross')
+		.main
+			p.main__greetings Hello Evano 👋🏼
+			.main__content.content 
+				.content__header
+					.content__wrapper
+						h2.content__title All Customers
+						p.content__subtitle Active Members
+					form.content__search-form.search-form
+						input.search-form__field(type="text", placeholder="Search")
+						button.search-form__btn(type="submit")
+							svg.search-form__icon 
+								use(href='./images/sprite.svg#icon-search')
+				table.content__data-table.data-table
+					thead.data-table__head
+						tr.data-table__row
+							th.data-table__item Customer Name
+							th.data-table__item Company
+							th.data-table__item Phone Number
+							th.data-table__item Email
+							th.data-table__item Country
+							th.data-table__item.data-table__item--aligned Status
+					tbody.data-table__body 
+						each customer in customers 
+							tr.data-table__row
+								td.data-table__item(data-label="Customer Name") #{customer.name}
+								td.data-table__item(data-label="Company") #{customer.company}
+								td.data-table__item(data-label="Phone Number") #{customer.phoneNumber}
+								td.data-table__item(data-label="Email") #{customer.email}
+								td.data-table__item(data-label="Country") #{customer.country}		
+								td.data-table__item(data-label="Status") 
+									if customer.isActive 
+										span.data-table__status.data-table__status--active Active					 
+									else 
+										span.data-table__status.data-table__status--inactive Inactive		
+														
+				.content__footer
+					p.content__meta Showing data 1 to 8 of  256K entries
+					.content__pagination.pagination
+						button.pagination__btn.button 
+							svg.pagination__icon 
+								use(href='./images/sprite.svg#icon-arrow-left')
+						button.pagination__btn.button 1
+						button.pagination__btn.button 2
+						button.pagination__btn.button 3
+						button.pagination__btn.button 4
+						span.pagination__dots ...
+						button.pagination__btn.button 40
+						button.pagination__btn.button 
+							svg.pagination__icon.pagination__icon--rotated
+								use(href='./images/sprite.svg#icon-arrow-left')
+		button.toggle.toggle--open(type="button") 
+			svg.toggle__img
+					use(href='./images/sprite.svg#icon-setting')
+	script(src="./index.js") 	
+	
+
+
+
+

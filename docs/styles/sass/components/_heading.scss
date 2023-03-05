@@ -1,0 +1,26 @@
+.heading {
+  margin-bottom: 64px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+
+.heading__img {
+  width: 37px;
+  height: 37px;
+
+  fill: currentColor;
+}
+
+.heading__text {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: calc(39 / 26);
+  letter-spacing: 0.01%;
+}
+
+.heading__info {
+  font-size: 10px;
+  line-height: calc(15 / 10);
+  color: $color-text-secondary;
+}

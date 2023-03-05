@@ -1,0 +1,14 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  color: $color-text-primary;
+}
+
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+}

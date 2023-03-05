@@ -1,0 +1,21 @@
+.profile {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.profile__img {
+  width: 42px;
+  height: 42px;
+}
+
+.profile__name {
+  line-height: calc(21 / 14);
+}
+
+.profile__job-position {
+  font-size: 12px;
+  line-height: calc(18 / 12);
+  color: $color-text-secondary;
+}
