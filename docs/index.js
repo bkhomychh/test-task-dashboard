@@ -15,7 +15,11 @@ function onWindowCLick({ target }) {
     return;
   }
 
-  if (!target.closest('.sidebar') && !refs.sidebar.classList.contains('isHidden')) {
+  if (
+    !target.closest('.sidebar') &&
+    !refs.sidebar.classList.contains('isHidden') &&
+    window.innerWidth < 1100
+  ) {
     hideSidebar();
   }
 }
